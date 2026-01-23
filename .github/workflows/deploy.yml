@@ -13,15 +13,34 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      - name: Hexo
+      - name: Replace the KV namespace
         run: sed -i 's/PRESERVED_FOR_ACTIONS/${{ secrets.KV_ID }}/g' wrangler.toml
+
+      - name: Debug project structure
+          run: |
+            echo "Current directory:"
+            pwd
+            echo ""
+            echo "Project structure:"
+            find . -name "*.ts" -o -name "*.js" | head -20
+            echo ""
+            echo "src directory contents:"
+            ls -la src/ 2>/dev/null || echo "src directory does not exist"
+            echo ""
+            echo "wrangler.toml content:"
+            cat wrangler.toml
 
       - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@2.0.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          preCommands: |
+            corepack enable
+            pnpm install
+            pnpm cleanupAssets
           command: deploy
           wranglerVersion: '3'
         env:
           NODE_VERSION: '20'
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
