@@ -16,12 +16,12 @@ jobs:
       - name: Hexo
         run: sed -i 's/PRESERVED_FOR_ACTIONS/${{ secrets.KV_ID }}/g' wrangler.toml
 
-      - name: Publish
+      - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@2.0.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: publish
+          command: deploy
           wranglerVersion: '3'
         env:
           NODE_VERSION: '20'
