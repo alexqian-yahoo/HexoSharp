@@ -50,12 +50,3 @@ jobs:
           command: publish
         env:
           NODE_VERSION: '20'
-        
-        //with:
-        //  apiToken: ${{ secrets.CF_API_TOKEN }}
-        //  preCommands: |
-        //    corepack enable
-        //    pnpm install
-        //    pnpm cleanupAssets
-        //env:
-        //  CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
