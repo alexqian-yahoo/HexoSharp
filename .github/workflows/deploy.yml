@@ -35,10 +35,6 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          preCommands: |
-            corepack enable
-            pnpm install
-            pnpm cleanupAssets
           command: deploy
           wranglerVersion: '3'
         env:
