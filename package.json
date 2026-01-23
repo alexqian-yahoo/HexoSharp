@@ -21,8 +21,8 @@
   "license": "AGPL-3.0-or-later",
   "devDependencies": {
     "@babel/core": "^7.18.2",
-    "@cloudflare/workers-types": "^3.11.0",
-    "@cloudflare/wrangler": "^1.20.0",
+    "@cloudflare/workers-types": "^4.0.0",
+    "@cloudflare/wrangler": "^4.60.0",
     "@rollup/plugin-replace": "^4.0.0",
     "@types/jest": "^27.5.1",
     "@types/jsonwebtoken": "^8.5.8",
@@ -49,7 +49,7 @@
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-react-hooks": "^4.4.0",
     "jest": "^28.1.0",
-    "miniflare": "^2.5.0",
+    "miniflare": "^4.0.0",
     "prettier": "^2.6.2",
     "rollup": "^2.75.3",
     "service-worker-mock": "^2.0.5",
@@ -91,3 +91,4 @@
     "workbox-window": "^6.5.2"
   }
 }
+
