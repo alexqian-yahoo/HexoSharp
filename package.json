@@ -22,7 +22,7 @@
   "devDependencies": {
     "@babel/core": "^7.18.2",
     "@cloudflare/workers-types": "^4.0.0",
-    "@cloudflare/wrangler": "^4.60.0",
+    "wrangler": "^4.60.0",
     "@rollup/plugin-replace": "^4.0.0",
     "@types/jest": "^27.5.1",
     "@types/jsonwebtoken": "^8.5.8",
@@ -91,4 +91,5 @@
     "workbox-window": "^6.5.2"
   }
 }
+
 
