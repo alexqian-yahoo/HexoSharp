@@ -4,7 +4,7 @@ zone_id = ""
 route = ""
 workers_dev = true
 compatibility_date = "2026-01-01"
-main = “src/worker/index.ts”
+main = "src/worker/index.ts"
 
 kv_namespaces = [{ binding = "HSPKV", id = "PRESERVED_FOR_ACTIONS" }]
 
